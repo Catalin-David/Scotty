@@ -1,15 +1,25 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+This project helps employees on their learning journey, by gathering resources, mentors/coaches and mentees all in one app.
 
 # Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
 1.	Installation process
+	- Make sure you have a SharePoint Online Tenant (check Microsoft's developer program if you don't have any paid environment)
+	- Create a site collection in your tenant
+	- Modify the config.xml file according to your environment
+	- Run the main.ps1 script
 2.	Software dependencies
 3.	Latest releases
 4.	API references
 
 # Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+1. Build
+2. Test
+	- After the main.ps1 script has finished, check if the following entities have provisioned in SharePoint:
+	- Tenant level:
+		- Term Group ... #TODO
+		- Term Sets ... #TODO
+	- Site collection level:
+		- items ... #TODO
 
 # Contribute
 TODO: Explain how other users and developers can contribute to make your code better. 
