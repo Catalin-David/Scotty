@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from './components/Navigation/Navigation';
 import Journeys from './components/Journeys/Journeys';
+import { initializeIcons } from '@uifabric/icons';
 
 function App() {
   return (
