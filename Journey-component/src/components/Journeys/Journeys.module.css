@@ -1,0 +1,11 @@
+.Journeys{
+    width: 92%;
+    height: 96%;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
