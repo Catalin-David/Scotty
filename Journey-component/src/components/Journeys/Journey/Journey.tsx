@@ -3,10 +3,10 @@ import { JourneyModel } from './Journey.model';
 import styles from './Journey.module.css';
 
 const Journey: React.FC<JourneyModel> = props => {
-    const [isHovered, switchHover] = useState<boolean>(false);
+    const [isHovered, setHover] = useState<boolean>(false);
 
     const toggleHover = () => {
-        switchHover(isHovered => !isHovered)
+        setHover(isHovered => !isHovered)
     }
 
     return (

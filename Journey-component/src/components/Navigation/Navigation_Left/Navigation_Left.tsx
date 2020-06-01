@@ -3,7 +3,7 @@ import Logo from './Logo/Logo';
 import Title from './Title/Title';
 import styles from './Navigation_left.module.css';
 
-const navigation_left: React.FC = () => {
+const NavigationLeft: React.FC = () => {
     return (
         <div className={styles.NavigationLeft}>
             <Logo />
@@ -12,4 +12,4 @@ const navigation_left: React.FC = () => {
     );
 }
 
-export default navigation_left;
+export default NavigationLeft;

@@ -4,7 +4,7 @@ import NavigationCentre from './Navigation_centre/Navigation_centre';
 import NavigationRight from './Navigation_right/Navigation_right';
 import styles from './Navigation.module.css';
 
-const Navigation: React.FC = () => {
+export const Navigation: React.FC = () => {
     
     return (
         <div className={styles.Navigation}>
@@ -14,5 +14,3 @@ const Navigation: React.FC = () => {
         </div>
     );
 }
-
-export default Navigation;

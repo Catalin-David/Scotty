@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Title.module.css';
-const title: React.FC = () => {
+const Title: React.FC = () => {
 
     return (
         <div className={styles.Title}>
@@ -10,4 +10,4 @@ const title: React.FC = () => {
     );
 }
 
-export default title;
+export default Title;
