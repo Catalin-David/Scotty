@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import { JourneyModel } from './Journey/Journey.model';
-import Journey from './Journey/Journey';
+import { Journey } from './Journey/Journey.model';
+import { JourneyOverview } from './Journey/JourneyOverview';
 import styles from './Journeys.module.css';
 
 const Journeys: React.FC = () => {
 
-    const [journeys, setJourneys] = useState<JourneyModel[]>([
+    const [journeys, setJourneys] = useState<Journey[]>([
         {
             id: 0,
             title: 'Fundamentals of front-end development',
@@ -81,22 +81,19 @@ const Journeys: React.FC = () => {
     ]);
 
     return (
-        <ul className={styles.Journeys}>
-            {
-                journeys.map(journey =>
-                    <li key={journey.id}>
-                        <Journey 
-                            id={journey.id} 
-                            title={journey.title}
-                            level={journey.level}
-                            rating={journey.rating}
-                            duration={journey.duration}
-                            image={journey.image}
-                        />      
-                    </li>
-                )
-            }
-        </ul>
+        <body>
+            <ul className={styles.Journeys}>
+                {
+                    journeys.map(journey =>
+                        <li key={journey.id}>
+                            <JourneyOverview 
+                                journey = {journey}
+                            />      
+                        </li>
+                    )
+                }
+            </ul>
+        </body>
     );
 }
 

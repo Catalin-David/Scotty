@@ -1,4 +1,23 @@
-.NavigationRight {
+.Header {
+    display: flex;
+    width: 100%;
+    background-color: white;
+    height: 80px
+}
+
+.HeaderLeft {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+    width: 20%;
+}
+
+.HeaderCenter{
+    width: 60%;
+}
+
+.HeaderRight {
     display: flex;
     width: 20%;
     height: 100%;
@@ -15,9 +34,6 @@
     border-radius: 5px;
     font-size: x-large;
     font-weight: 700;
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-top: 10px;
     cursor: pointer;
 }
 
@@ -29,8 +45,6 @@
     border-radius: 5px;
     font-size: x-large;
     font-weight: 700;
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-top: 10px;
+    margin-left: 30px;
     cursor: pointer;
 }

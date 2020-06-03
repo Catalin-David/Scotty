@@ -1,4 +1,4 @@
-export interface JourneyModel {
+export interface Journey {
     id: number;
     title: string;
     level: string;
