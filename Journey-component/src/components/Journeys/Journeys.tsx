@@ -81,7 +81,7 @@ const Journeys: React.FC = () => {
     ]);
 
     return (
-        <body>
+        <main>
             <ul className={styles.Journeys}>
                 {
                     journeys.map(journey =>
@@ -93,7 +93,7 @@ const Journeys: React.FC = () => {
                     )
                 }
             </ul>
-        </body>
+        </main>
     );
 }
 
