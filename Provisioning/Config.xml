@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <Credentials>
-    <Website></Website>
-    <Username></Username>
-    <ReceivingWebsite></ReceivingWebsite>
+    <Website>https://davidcatalin.sharepoint.com/sites/AccesaNews</Website>
+    <Username>DavidCatalin@davidcatalin.onmicrosoft.com</Username>
+    <ReceivingWebsite>https://davidcatalin.sharepoint.com/sites/group</ReceivingWebsite>
+    <ListToBeExtracted>MyNewList</ListToBeExtracted>
 </Credentials>
