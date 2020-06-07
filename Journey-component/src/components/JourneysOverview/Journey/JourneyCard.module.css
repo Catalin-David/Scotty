@@ -1,28 +1,23 @@
 .JourneyCard {
     display: flex;
     flex-direction: column;
-    height: 422px;
+    height: 530px;
     width: 640px;
     border: 3px solid #3f3f3f;
-    padding-top: 10px;
     border-radius: 8px;
     margin: 10px;
+    background-color: #ffffff;
 }
 
 .JourneyCard img {
-    top: -185px;
-    position: relative;
     height: 363px;
     width: 640px;
     border-radius: 5px;
 }
 
-.JourneyCard img:hover{
-    opacity: 0;
-}
-
 .JourneyCard ul {
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
 }
 
@@ -34,11 +29,18 @@
 }
 
 h3{
+    margin-top: 5px;
     margin-left: 10px;
 }
 
 p{
+    margin-top: 0px;
     text-align: left;
     font-size: larger;
     margin-left: 0.5em;
+}
+
+.CardEntry{
+    display: inline-flex;
+    vertical-align: middle;
 }
