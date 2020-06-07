@@ -1,11 +1,11 @@
 import React from 'react';
 import { Journey } from './Journey.model';
-import styles from './JourneyOverview.module.css';
+import styles from './JourneyCard.module.css';
 import {Icon} from '@fluentui/react/lib/Icon';
 
-export const JourneyOverview: React.FC<{journey: Journey}> = ({journey}) => {
+export const JourneyCard: React.FC<{journey: Journey}> = ({journey}) => {
     return (
-        <div className={styles.JourneyOverview}>
+        <div className={styles.JourneyCard}>
             <h3>{journey.title}</h3>
             <ul>
                 <li>

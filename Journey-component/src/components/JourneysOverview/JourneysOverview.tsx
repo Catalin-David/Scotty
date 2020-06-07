@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import { Journey } from './Journey/Journey.model';
-import { JourneyOverview } from './Journey/JourneyOverview';
-import styles from './Journeys.module.css';
+import { JourneyCard } from './Journey/JourneyCard';
+import styles from './JourneysOverview.module.css';
 
-const Journeys: React.FC = () => {
+const JourneysOverview: React.FC = () => {
 
     const [journeys, setJourneys] = useState<Journey[]>([
         {
@@ -82,11 +82,11 @@ const Journeys: React.FC = () => {
 
     return (
         <main>
-            <ul className={styles.Journeys}>
+            <ul className={styles.JourneysOverview}>
                 {
                     journeys.map(journey =>
                         <li key={journey.id}>
-                            <JourneyOverview 
+                            <JourneyCard 
                                 journey = {journey}
                             />      
                         </li>
@@ -97,4 +97,4 @@ const Journeys: React.FC = () => {
     );
 }
 
-export default Journeys;
+export default JourneysOverview;

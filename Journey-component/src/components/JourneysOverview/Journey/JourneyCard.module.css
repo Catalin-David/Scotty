@@ -1,4 +1,4 @@
-.JourneyOverview {
+.JourneyCard {
     display: flex;
     flex-direction: column;
     height: 422px;
@@ -9,7 +9,7 @@
     margin: 10px;
 }
 
-.JourneyOverview img {
+.JourneyCard img {
     top: -185px;
     position: relative;
     height: 363px;
@@ -17,16 +17,16 @@
     border-radius: 5px;
 }
 
-.JourneyOverview img:hover{
+.JourneyCard img:hover{
     opacity: 0;
 }
 
-.JourneyOverview ul {
+.JourneyCard ul {
     display: flex;
     justify-content: flex-start;
 }
 
-.JourneyOverview li {
+.JourneyCard li {
     display: flex;
     justify-content: flex-start;
     align-content: center;
