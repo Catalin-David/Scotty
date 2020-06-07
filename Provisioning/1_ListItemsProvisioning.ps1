@@ -1,3 +1,4 @@
+#list items provisioning function
 function ConnectToReceivingTenant(){
     # connect to receiving tenant
 

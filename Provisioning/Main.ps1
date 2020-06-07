@@ -1,5 +1,5 @@
 #import other files representing granular actions
-
+. .\1_ListItemsProvisioning.ps1
 function ConnectToProvisioningTenant(){
     #connect to provisioning tenant
 
@@ -37,7 +37,6 @@ function Main(){
 
     AddItemsToProvisioningTemplate
 
-    . .\ListItemsProvisioning.ps1
 
     ConnectToReceivingTenant
 
