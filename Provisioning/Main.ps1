@@ -6,18 +6,18 @@ Main
 
 function Main(){
 
-    ConnectToSharepointSite($script:configFile.Credentials.ProvisioningWebsiteUrl)
+    ConnectToSharepointUrl($script:configFile.Credentials.ProvisioningWebsiteUrl)
 
     GetProvisioningTemplateOfListAsXml
 
     AddItemsToProvisioningTemplateOfListFromXml
 
-    ConnectToSharepointSite($script:configFile.Credentials.ReceivingWebsiteUrl)
+    ConnectToSharepointUrl($script:configFile.Credentials.ReceivingWebsiteUrl)
 
     AddListFromXmlToSharepointSite
 }
 
-function ConnectToSharepointSite($url){
+function ConnectToSharepointUrl($url){
     #connect to a sharepoint site with the url given as a parameter
 
     $username = $script:configFile.Credentials.Username
