@@ -6,42 +6,29 @@ Main
 
 function Main(){
 
-    ConnectToSharepointUrl($script:configFile.Credentials.ProvisioningWebsiteUrl)
+    ConnectToSharepointUrl -Url $script:configFile.Credentials.ProvisioningWebsiteUrl
 
-    GetProvisioningTemplateOfListAsXml
+    GetProvisioningTemplateOfListAsXml -List $script:configFile.Credentials.ListToBeExtracted
 
-    AddItemsToProvisioningTemplateOfListFromXml
+    AddPnPDataRowsToProvisioningTemplate -List $script:configFile.Credentials.ListToBeExtracted
 
-    ConnectToSharepointUrl($script:configFile.Credentials.ReceivingWebsiteUrl)
+    ConnectToSharepointUrl -Url $script:configFile.Credentials.ReceivingWebsiteUrl
 
     AddListFromXmlToSharepointSite
 }
 
-function ConnectToSharepointUrl($url){
-    #connect to a sharepoint site with the url given as a parameter
-
+function ConnectToSharepointUrl($Url){
     $username = $script:configFile.Credentials.Username
-    $passwordPath = $script:configFile.Credentials.PasswordPath
 
-    $password = Get-Content $passwordPath | ConvertTo-SecureString
+    $password = Get-Content "password.txt" | ConvertTo-SecureString
 
-    $credentials = New-Object System.Management.Automation.PSCredential($username, $password)
-
-    Connect-PnPOnline -Url $url -Credentials $credentials
-}
-
-function GetProvisioningTemplateOfListAsXml(){
-    # stores the provisioning template of the list whose name is found at ListToBeExtraced field from Config.xml into ListItems.xml
-
-    $listToBeExtracted = $script:configFile.Credentials.ListToBeExtracted
-
-    Get-PnPProvisioningTemplate -Out ListItems.xml -Handlers Lists -ListsToExtract $listToBeExtracted -Force
-}
-
-function AddItemsToProvisioningTemplateOfListFromXml(){
-    # adds items to the List from the provisioning template which can be found in ListItems.xml
-
-    $listToWhichItemsAreAdded = $script:configFile.Credentials.ListToBeExtracted
-
-    Add-PnPDataRowsToProvisioningTemplate -Path ListItems.xml -List $listToWhichItemsAreAdded -Query "<view></view>"
+    if($null -eq $password){
+        $credentials = Get-Credential -UserName $username -Message "Type password here"
+        ConvertFrom-SecureString $credentials.Password | Out-File "password.txt"
+    }
+    else{
+        $credentials = New-Object System.Management.Automation.PSCredential($username, $password)
+    }
+    
+    Connect-PnPOnline -Url $Url -Credentials $credentials
 }

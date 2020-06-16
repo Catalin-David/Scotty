@@ -1,6 +1,12 @@
 #list items provisioning function
 
+function GetProvisioningTemplateOfListAsXml($List){
+    Get-PnPProvisioningTemplate -Out ListItems.xml -Handlers Lists -ListsToExtract $List -Force
+}
+
+function AddPnPDataRowsToProvisioningTemplate($List){
+    Add-PnPDataRowsToProvisioningTemplate -Path ListItems.xml -List $List -Query "<view></view>"
+}
 function AddListFromXmlToSharepointSite(){
-    # adds the list found inside the provisiong template stored in ListItems.xml to the sharepoint site to which we are currently connected
     Apply-PnpProvisioningTemplate ListItems.xml
 }
