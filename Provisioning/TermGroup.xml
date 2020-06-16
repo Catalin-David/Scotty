@@ -1,20 +1,28 @@
-<pnp:TermGroups xmlns:pnp = "http://schemas.dev.office.com/PnP/2020/02/ProvisioningSchema">
-    <pnp:TermGroup Name="Skill resources">
-        <pnp:TermSets>
-            <pnp:TermSet Name="Skill termset">
-                <pnp:Terms>
-                    <pnp:Term Name="JavaScript" />
-                    <pnp:Term Name="C#" />
-                    <pnp:Term Name="React" />
-                </pnp:Terms>
-            </pnp:TermSet>
-            <pnp:TermSet Name="Level termset">
-                <pnp:Terms>
-                    <pnp:Term Name="Beginner" />
-                    <pnp:Term Name="Intermediate" />
-                    <pnp:Term Name="Advanced" />
-                </pnp:Terms>
-            </pnp:TermSet>
-        </pnp:TermSets>
-    </pnp:TermGroup>
-</pnp:TermGroups>
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2020/02/ProvisioningSchema">
+  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=3.21.2005.2, Culture=neutral, PublicKeyToken=5e633289e95c321a" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-558787FF83AB4EF6BE7218409E33BE48">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-558787FF83AB4EF6BE7218409E33BE48" Version="1" BaseSiteTemplate="TENANTADMIN#0" Scope="RootSite">
+        <pnp:TermGroups >
+            <pnp:TermGroup Name="Skill resources">
+                <pnp:TermSets>
+                    <pnp:TermSet Name="Skill termset">
+                        <pnp:Terms>
+                            <pnp:Term Name="JavaScript" />
+                            <pnp:Term Name="C#" />
+                            <pnp:Term Name="React" />
+                        </pnp:Terms>
+                    </pnp:TermSet>
+                    <pnp:TermSet Name="Level termset">
+                        <pnp:Terms>
+                            <pnp:Term Name="Beginner" />
+                            <pnp:Term Name="Intermediate" />
+                            <pnp:Term Name="Advanced" />
+                        </pnp:Terms>
+                    </pnp:TermSet>
+                </pnp:TermSets>
+            </pnp:TermGroup>
+        </pnp:TermGroups>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>

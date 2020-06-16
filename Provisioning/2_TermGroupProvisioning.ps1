@@ -1,7 +1,8 @@
 #term group provisioning function
 
-function ImportTermSets(){
-    Import-PnPTermGroupFromXml -Path TermGroup.xml
+function ImportTermGroupFromXmlToSharepointTenant(){
+    # takes the termgroup stored in TermGroup.xml and adds it to the currently connected sharepoint tenant
+    Apply-PnPProvisioningTemplate -Path TermGroup.xml
 }
 
 #create document library function

@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <Credentials>
-    <Website></Website>
-    <Username></Username>
+    <TenantUrl>https://davidcatalin-admin.sharepoint.com/</TenantUrl>
+    <Username>DavidCatalin@davidcatalin.onmicrosoft.com</Username>
+    <PasswordPath>C:\Users\cata0\OneDrive\Desktop\Work\React-task-final\Accesa.Internship.DWAccesaStartApril2020\Provisioning\password.txt</PasswordPath>
     <ReceivingWebsite></ReceivingWebsite>
     <ListToBeExtracted></ListToBeExtracted>
 </Credentials>
