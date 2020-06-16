@@ -5,5 +5,5 @@ function ImportTermGroupFromXmlToSharepointTenant(){
 
 function AddDocumentLibraryToSharepointSite(){
     # takes the document library stored in DocumentLibraryTemplate.xml and adds it to the currently connected sharepoint site
-    Apply-PnPProvisioningTemplate -Path .\DocumentLibraryTemplate.xml
+    Apply-PnPProvisioningTemplate -Path DocumentLibraryTemplate.xml
 }

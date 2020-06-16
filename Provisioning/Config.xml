@@ -3,7 +3,4 @@
     <SiteUrl></SiteUrl>
     <TenantUrl></TenantUrl>
     <Username></Username>
-    <PasswordPath></PasswordPath>
-    <ReceivingWebsite></ReceivingWebsite>
-    <ListToBeExtracted></ListToBeExtracted>
 </Credentials>

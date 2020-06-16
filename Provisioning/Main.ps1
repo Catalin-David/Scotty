@@ -6,24 +6,31 @@ Main
 
 function Main(){
 
-    ConnectToSharepointUrl($script:configFile.Credentials.TenantUrl)
+    ConnectToSharepointUrl -Url $script:configFile.Credentials.TenantUrl
 
     ImportTermGroupFromXmlToSharepointTenant
 
-    ConnectToSharepointUrl($script:configFile.Credentials.SiteUrl)
+    Disconnect-PnPOnline
+
+    ConnectToSharepointUrl -Url $script:configFile.Credentials.SiteUrl
 
     AddDocumentLibraryToSharepointSite
+
+    Disconnect-PnPOnline
 }
 
-function ConnectToSharepointUrl($url){
-    #connect to sharepoint tenant or site with the url given as a parameter
-
+function ConnectToSharepointUrl($Url){
     $username = $script:configFile.Credentials.Username
-    $passwordPath = $script:configFile.Credentials.PasswordPath
 
-    $password = Get-Content $passwordPath | ConvertTo-SecureString
+    $password = Get-Content "password.txt" | ConvertTo-SecureString
 
-    $credentials = New-Object System.Management.Automation.PSCredential($username, $password)
-
-    Connect-PnPOnline -Url $url -Credentials $credentials
+    if($null -eq $password){
+        $credentials = Get-Credential -UserName $username -Message "Type password here"
+        ConvertFrom-SecureString $credentials.Password | Out-File "password.txt"
+    }
+    else{
+        $credentials = New-Object System.Management.Automation.PSCredential($username, $password)
+    }
+    
+    Connect-PnPOnline -Url $Url -Credentials $credentials
 }
