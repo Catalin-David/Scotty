@@ -12,9 +12,13 @@ function Main(){
 
     AddPnPDataRowsToProvisioningTemplate -List $script:configFile.Credentials.ListToBeExtracted
 
+    Disconnect-PnPOnline
+
     ConnectToSharepointUrl -Url $script:configFile.Credentials.ReceivingWebsiteUrl
 
     AddListFromXmlToSharepointSite
+
+    Disconnect-PnPOnline
 }
 
 function ConnectToSharepointUrl($Url){
