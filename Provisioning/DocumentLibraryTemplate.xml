@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2020/02/ProvisioningSchema">
+  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=3.21.2005.2, Culture=neutral, PublicKeyToken=5e633289e95c321a" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-E948DFD703414438BB7136E8F4059EA0">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-E948DFD703414438BB7136E8F4059EA0" Version="1" BaseSiteTemplate="SITEPAGEPUBLISHING#0" Scope="RootSite">
+      <pnp:Lists>
+        <pnp:ListInstance Title="MyDocumentLibrary" Description="" Url="Shared Documents" DocumentTemplate="{site}/Shared Documents/Forms/template.dotx" OnQuickLaunch="true" TemplateType="101" TemplateFeatureID="00bfea71-e717-4e80-aa17-d0c71b360101" DefaultDisplayFormUrl="{site}/Shared Documents/Forms/DispForm.aspx" DefaultEditFormUrl="{site}/Shared Documents/Forms/EditForm.aspx" DefaultNewFormUrl="{site}/Shared Documents/Forms/Upload.aspx" ImageUrl="/_layouts/15/images/itdl.png?rev=47">
+          <pnp:Views>
+            <View Name="{DB997482-5F17-45D7-873E-DD7F48B91564}" DisplayName="All Documents" Url="{site}/Shared Documents/Forms/AllItems.aspx" ImageUrl="/_layouts/15/images/dlicon.png?rev=47">
+              <ViewFields>
+                <FieldRef Name="DocIcon" />
+                <FieldRef Name="LinkFilename" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Editor" />
+                <FieldRef Name="Skill" />
+                <FieldRef Name="Difficulty" />
+              </ViewFields>
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field Type="Note" DisplayName="Difficulty_0" StaticName="lf6e0a9f46344621b2f9494c75b0a341" Name="lf6e0a9f46344621b2f9494c75b0a341" ID="{a6f54d9c-5da3-48a9-ba26-1e870e9ffca0}" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" ColName="ntext3" RowOrdinal="0" />
+            <Field Type="Note" DisplayName="Skill_0" StaticName="d89c3c25ca1c47feb3f4d50029097127" Name="d89c3c25ca1c47feb3f4d50029097127" ID="{82867880-df5d-4581-a167-a440ba82c714}" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" ColName="ntext2" RowOrdinal="0" />
+            <Field Type="TaxonomyFieldType" DisplayName="Skill" List="{listid:TaxonomyHiddenList}" WebId="{siteid}" ShowField="Term1033" ID="{d89c3c25-ca1c-47fe-b3f4-d50029097127}" SourceID="{{listid:Documents}}" StaticName="Skill" Name="Skill" ColName="int1" RowOrdinal="0" Version="1">
+              <Customization>
+                <ArrayOfProperty>
+                  <Property>
+                    <Name>SspId</Name>
+                    <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+                  </Property>
+                  <Property>
+                    <Name>TermSetId</Name>
+                    <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:Skill resources:Skill termset}</Value>
+                  </Property>
+                  <Property>
+                    <Name>AnchorId</Name>
+                    <Value xmlns:q3="http://www.w3.org/2001/XMLSchema" p4:type="q3:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">00000000-0000-0000-0000-000000000000</Value>
+                  </Property>
+                  <Property>
+                    <Name>TextField</Name>
+                    <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{82867880-df5d-4581-a167-a440ba82c714}</Value>
+                  </Property>
+                </ArrayOfProperty>
+              </Customization>
+            </Field>
+            <Field Type="TaxonomyFieldType" DisplayName="Difficulty" List="{listid:TaxonomyHiddenList}" WebId="{siteid}" ShowField="Term1033" ID="{5f6e0a9f-4634-4621-b2f9-494c75b0a341}" SourceID="{{listid:Documents}}" StaticName="Difficulty" Name="Difficulty" ColName="int3" RowOrdinal="0" Version="1">
+              <Customization>
+                <ArrayOfProperty>
+                  <Property>
+                    <Name>SspId</Name>
+                    <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+                  </Property>
+                  <Property>
+                    <Name>TermSetId</Name>
+                    <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:Skill resources:Level termset}</Value>
+                  </Property>
+                  <Property>
+                    <Name>AnchorId</Name>
+                    <Value xmlns:q3="http://www.w3.org/2001/XMLSchema" p4:type="q3:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">00000000-0000-0000-0000-000000000000</Value>
+                  </Property>
+                  <Property>
+                    <Name>TextField</Name>
+                    <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{a6f54d9c-5da3-48a9-ba26-1e870e9ffca0}</Value>
+                  </Property>
+                </ArrayOfProperty>
+              </Customization>
+            </Field>
+          </pnp:Fields>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>

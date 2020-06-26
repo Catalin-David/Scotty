@@ -1,2 +1,25 @@
-Provisioning/Config.xml
-Provisioning/ListItems.xml
+Provisioning/password.txt
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+Journey-component/node_modules
+Journey-component/.pnp
+Journey-component.pnp.js
+
+# testing
+Journey-component/coverage
+
+# production
+Journey-component/build
+
+# misc
+Journey-component.DS_Store
+Journey-component.env.local
+Journey-component.env.development.local
+Journey-component.env.test.local
+Journey-component.env.production.local
+
+Journey-componentnpm-debug.log*
+Journey-componentyarn-debug.log*
+Journey-componentyarn-error.log*
