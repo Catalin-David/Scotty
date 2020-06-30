@@ -7,9 +7,9 @@ Main
 
 function Main(){
 
-    #ListItemsProvisioning
-    #TermGroupProvisioning
-    #DocumentLibraryProvisioning
+    ListItemsProvisioning
+    TermGroupProvisioning
+    DocumentLibraryProvisioning
     JourneyListProvisioning
 }
 
