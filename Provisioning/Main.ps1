@@ -8,50 +8,66 @@ Main
 
 function Main(){
 
-    #ListItemsProvisioning
-    #TermGroupProvisioning
-    #DocumentLibraryProvisioning
-    UserJourneyListProvisioning
+    ProvisionListItems
+    ProvisionTermGroup
+    ProvisionResourcesDocumentLibrary
+    ProvisionUserJourneyList
 }
 
-function ListItemsProvisioning(){
+function ProvisionListItems(){
     ConnectToSharepointUrl -Url $script:configFile.Credentials.ProvisioningWebsiteUrl
 
-    GetProvisioningTemplateOfListAsXml -List $script:configFile.Credentials.ListToBeExtracted
+    $listExists = Get-PnPList -Identity $script:configFile.Credentials.ListToBeExtracted
+    if($null -ne $listExists){
+        GetProvisioningTemplateOfListAsXml -List $script:configFile.Credentials.ListToBeExtracted
 
-    AddPnPDataRowsToProvisioningTemplate -List $script:configFile.Credentials.ListToBeExtracted
+        AddPnPDataRowsToProvisioningTemplate -List $script:configFile.Credentials.ListToBeExtracted
+    }
 
     Disconnect-PnPOnline
 
     ConnectToSharepointUrl -Url $script:configFile.Credentials.ReceivingWebsiteUrl
 
-    AddListFromXmlToSharepointSite
+    $listAlreadyProvisioned = Get-PnPList -Identity $script:configFile.Credentials.ListToBeExtracted
+    if($null -eq $listAlreadyProvisioned){
+        AddListFromXmlToSharepointSite -List $script:configFile.Credentials.ListToBeExtracted
+    }
 
     Disconnect-PnPOnline
 }
 
-function TermGroupProvisioning(){
+function ProvisionTermGroup(){
     ConnectToSharepointUrl -Url $script:configFile.Credentials.TenantUrl
 
-    ImportTermGroupFromXmlToSharepointTenant
+    $termGroupAlreadyProvisioned = Get-PnPTermGroup -Identity "Skill resources"
+    if($null -eq $termGroupAlreadyProvisioned){
+        ImportTermGroupFromXmlToSharepointTenant
+    }
 
     Disconnect-PnPOnline
 }
 
-function DocumentLibraryProvisioning(){
+function ProvisionResourcesDocumentLibrary(){
     ConnectToSharepointUrl -Url $script:configFile.Credentials.SiteUrl
 
-    AddDocumentLibraryToSharepointSite
+    $documentLibraryAlreadyProvisioned = Get-PnPList -Identity "ResourcesDocumentLibrary"
+    if($null -eq $documentLibraryAlreadyProvisioned){
+        AddDocumentLibraryToSharepointSite
+    }
 
     Disconnect-PnPOnline
 }
 
-function UserJourneyListProvisioning(){
+function ProvisionUserJourneyList(){
+
+    UserJourneys
     ConnectToSharepointUrl -Url $script:configFile.Credentials.UserJourneyListTargetSite
 
-    ApplyUserJourneyListTemplate
-
-    CreateLookupColumn
+    $userJourneysListAlreadyProvisioned = Get-PnPList -Identity "UserJourneys"
+    if($null -eq $userJourneysListAlreadyProvisioned){
+        ApplyUserJourneyListTemplate
+        CreateLookupColumn
+    }
 
     Disconnect-PnPOnline
 }

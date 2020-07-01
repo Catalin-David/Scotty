@@ -4,7 +4,7 @@
   <pnp:Templates ID="CONTAINER-TEMPLATE-E948DFD703414438BB7136E8F4059EA0">
     <pnp:ProvisioningTemplate ID="TEMPLATE-E948DFD703414438BB7136E8F4059EA0" Version="1" BaseSiteTemplate="SITEPAGEPUBLISHING#0" Scope="RootSite">
       <pnp:Lists>
-        <pnp:ListInstance Title="MyDocumentLibrary" Description="" Url="Shared Documents" DocumentTemplate="{site}/Shared Documents/Forms/template.dotx" OnQuickLaunch="true" TemplateType="101" TemplateFeatureID="00bfea71-e717-4e80-aa17-d0c71b360101" DefaultDisplayFormUrl="{site}/Shared Documents/Forms/DispForm.aspx" DefaultEditFormUrl="{site}/Shared Documents/Forms/EditForm.aspx" DefaultNewFormUrl="{site}/Shared Documents/Forms/Upload.aspx" ImageUrl="/_layouts/15/images/itdl.png?rev=47">
+        <pnp:ListInstance Title="ResourcesDocumentLibrary" Description="" Url="Shared Documents" DocumentTemplate="{site}/Shared Documents/Forms/template.dotx" OnQuickLaunch="true" TemplateType="101" TemplateFeatureID="00bfea71-e717-4e80-aa17-d0c71b360101" DefaultDisplayFormUrl="{site}/Shared Documents/Forms/DispForm.aspx" DefaultEditFormUrl="{site}/Shared Documents/Forms/EditForm.aspx" DefaultNewFormUrl="{site}/Shared Documents/Forms/Upload.aspx" ImageUrl="/_layouts/15/images/itdl.png?rev=47">
           <pnp:Views>
             <View Name="{DB997482-5F17-45D7-873E-DD7F48B91564}" DisplayName="All Documents" Url="{site}/Shared Documents/Forms/AllItems.aspx" ImageUrl="/_layouts/15/images/dlicon.png?rev=47">
               <ViewFields>
