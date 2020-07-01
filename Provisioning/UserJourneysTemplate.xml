@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2020/02/ProvisioningSchema">
+  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=3.21.2005.2, Culture=neutral, PublicKeyToken=5e633289e95c321a" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-F6BBF72634FF417CBFCE3F3A6DFAA596">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-F6BBF72634FF417CBFCE3F3A6DFAA596" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
+      <pnp:Lists>
+        <pnp:ListInstance Title="UserJourneys" Description="" DocumentTemplate="" TemplateType="100" Url="Lists/UserJourneys" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/UserJourneys/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/UserJourneys/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/UserJourneys/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{84143B49-E415-4642-9F61-9D663DB6D677}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/UserJourneys/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ID" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="StartDate" />
+                <FieldRef Name="Goalfinishdate" />
+                <FieldRef Name="FinishDate" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+              <CustomFormatter />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field DisplayName="Start Date" FriendlyDisplayFormat="Disabled" Format="DateOnly" Name="StartDate" Title="Start Date" Type="DateTime" ID="{66cf6565-750f-4b40-9fda-16a4c05e0321}" SourceID="{{listid:UserJourneys}}" StaticName="StartDate" ColName="datetime1" RowOrdinal="0" />
+            <Field DisplayName="Goal finish date" FriendlyDisplayFormat="Disabled" Format="DateOnly" Name="Goalfinishdate" Title="Goal finish date" Type="DateTime" ID="{1b5fa2e0-ac56-4fa2-a507-e002f89f6602}" SourceID="{{listid:UserJourneys}}" StaticName="Goalfinishdate" ColName="datetime2" RowOrdinal="0" />
+            <Field DisplayName="Finish Date" FriendlyDisplayFormat="Disabled" Format="DateOnly" Name="FinishDate" Title="Finish Date" Type="DateTime" ID="{2c546692-3a3c-4b78-a769-1e5ebf435efe}" SourceID="{{listid:UserJourneys}}" StaticName="FinishDate" ColName="datetime3" RowOrdinal="0" />
+          </pnp:Fields>
+          <pnp:Webhooks>
+            <pnp:Webhook ServerNotificationUrl="https://17-northeurope1.pushp.svc.ms/notifications?token=w1-f2993fc2-0cee-4985-b8d0-3bcf8600a755" ExpiresInDays="1" />
+          </pnp:Webhooks>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>

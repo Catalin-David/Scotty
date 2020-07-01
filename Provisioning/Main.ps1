@@ -1,5 +1,6 @@
 . .\2_TermGroupProvisioning.ps1
 . .\1_ListItemsProvisioning.ps1
+. .\UserJourneyListProvisioning.ps1
 
 [xml]$script:configFile = Get-Content "Config.xml"
 
@@ -7,20 +8,13 @@ Main
 
 function Main(){
 
-    # Function calls that solve the list items provisioning task
-    ConnectToSharepointUrl -Url $script:configFile.Credentials.TenantUrl
+    #ListItemsProvisioning
+    #TermGroupProvisioning
+    #DocumentLibraryProvisioning
+    UserJourneyListProvisioning
+}
 
-    ImportTermGroupFromXmlToSharepointTenant
-
-    Disconnect-PnPOnline
-
-    ConnectToSharepointUrl -Url $script:configFile.Credentials.SiteUrl
-
-    AddDocumentLibraryToSharepointSite
-
-    Disconnect-PnPOnline
-
-    # Funtion calls that solve the term group provisioning task
+function ListItemsProvisioning(){
     ConnectToSharepointUrl -Url $script:configFile.Credentials.ProvisioningWebsiteUrl
 
     GetProvisioningTemplateOfListAsXml -List $script:configFile.Credentials.ListToBeExtracted
@@ -36,6 +30,31 @@ function Main(){
     Disconnect-PnPOnline
 }
 
+function TermGroupProvisioning(){
+    ConnectToSharepointUrl -Url $script:configFile.Credentials.TenantUrl
+
+    ImportTermGroupFromXmlToSharepointTenant
+
+    Disconnect-PnPOnline
+}
+
+function DocumentLibraryProvisioning(){
+    ConnectToSharepointUrl -Url $script:configFile.Credentials.SiteUrl
+
+    AddDocumentLibraryToSharepointSite
+
+    Disconnect-PnPOnline
+}
+
+function UserJourneyListProvisioning(){
+    ConnectToSharepointUrl -Url $script:configFile.Credentials.UserJourneyListTargetSite
+
+    ApplyUserJourneyListTemplate
+
+    CreateLookupColumn
+
+    Disconnect-PnPOnline
+}
 function ConnectToSharepointUrl($Url){
     $username = $script:configFile.Credentials.Username
 
