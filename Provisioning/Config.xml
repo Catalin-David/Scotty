@@ -7,4 +7,7 @@
     <ReceivingWebsiteUrl></ReceivingWebsiteUrl>
     <ListToBeExtracted></ListToBeExtracted>
     <UserJourneyListTargetSite></UserJourneyListTargetSite>
+    <JourneyListProvisioningSite></JourneyListProvisioningSite>
+    <JourneyListName></JourneyListName>
+    <JourneyListReceivingSite></JourneyListReceivingSite>
 </Credentials>
