@@ -21,6 +21,7 @@ export default class ClientWebPart extends BaseClientSideWebPart <IClientWebPart
     const element: React.ReactElement<IClientProps> = React.createElement(
       Client,
       {
+        context: this.context,
         description: this.properties.description
       }
     );
