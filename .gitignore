@@ -1,25 +1,35 @@
 Provisioning/password.txt
 
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Logs
+logs
+*.log
+npm-debug.log*
 
-# dependencies
-Journey-component/node_modules
-Journey-component/.pnp
-Journey-component.pnp.js
+# Dependency directories
+Client/node_modules
 
-# testing
-Journey-component/coverage
+# Build generated files
+Client/dist
+Client/lib
+Client/solution
+Client/temp
+*.sppkg
 
-# production
-Journey-component/build
+# Coverage directory used by tools like istanbul
+Client/coverage
 
-# misc
-Journey-component.DS_Store
-Journey-component.env.local
-Journey-component.env.development.local
-Journey-component.env.test.local
-Journey-component.env.production.local
+# OSX
+.DS_Store
 
-Journey-componentnpm-debug.log*
-Journey-componentyarn-debug.log*
-Journey-componentyarn-error.log*
+# Visual Studio files
+.ntvs_analysis.dat
+.vs
+Client/bin
+Client/obj
+
+# Resx Generated Code
+*.resx.ts
+
+# Styles Generated Code
+*.scss.ts
+
