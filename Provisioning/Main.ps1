@@ -7,20 +7,13 @@ Main
 
 function Main(){
 
-    # Function calls that solve the list items provisioning task
-    ConnectToSharepointUrl -Url $script:configFile.Credentials.TenantUrl
+    ListItemsProvisioning
+    TermGroupProvisioning
+    DocumentLibraryProvisioning
+    JourneyListProvisioning
+}
 
-    ImportTermGroupFromXmlToSharepointTenant
-
-    Disconnect-PnPOnline
-
-    ConnectToSharepointUrl -Url $script:configFile.Credentials.SiteUrl
-
-    AddDocumentLibraryToSharepointSite
-
-    Disconnect-PnPOnline
-
-    # Funtion calls that solve the term group provisioning task
+function ListItemsProvisioning(){
     ConnectToSharepointUrl -Url $script:configFile.Credentials.ProvisioningWebsiteUrl
 
     GetProvisioningTemplateOfListAsXml -List $script:configFile.Credentials.ListToBeExtracted
@@ -30,6 +23,38 @@ function Main(){
     Disconnect-PnPOnline
 
     ConnectToSharepointUrl -Url $script:configFile.Credentials.ReceivingWebsiteUrl
+
+    AddListFromXmlToSharepointSite
+
+    Disconnect-PnPOnline
+}
+
+function TermGroupProvisioning(){
+    ConnectToSharepointUrl -Url $script:configFile.Credentials.TenantUrl
+
+    ImportTermGroupFromXmlToSharepointTenant
+
+    Disconnect-PnPOnline
+}
+
+function DocumentLibraryProvisioning(){
+    ConnectToSharepointUrl -Url $script:configFile.Credentials.SiteUrl
+
+    AddDocumentLibraryToSharepointSite
+
+    Disconnect-PnPOnline
+}
+
+function JourneyListProvisioning(){
+    ConnectToSharepointUrl -Url $script:configFile.Credentials.JourneyListProvisioningSite
+
+    GetProvisioningTemplateOfListAsXml -List $script:configFile.Credentials.JourneyListName
+
+    AddPnPDataRowsToProvisioningTemplate -List $script:configFile.Credentials.JourneyListName
+
+    Disconnect-PnPOnline
+
+    ConnectToSharepointUrl -Url $script:configFile.Credentials.JourneyListReceivingSite
 
     AddListFromXmlToSharepointSite
 

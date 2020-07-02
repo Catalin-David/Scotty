@@ -6,4 +6,7 @@
     <ProvisioningWebsiteUrl></ProvisioningWebsiteUrl>
     <ReceivingWebsiteUrl></ReceivingWebsiteUrl>
     <ListToBeExtracted></ListToBeExtracted>
+    <JourneyListProvisioningSite></JourneyListProvisioningSite>
+    <JourneyListName></JourneyListName>
+    <JourneyListReceivingSite></JourneyListReceivingSite>
 </Credentials>
