@@ -1,42 +1,27 @@
-import * as React from 'react';
-import {ISearchResultProps} from "./ISearchResultProps";
-import {ISearchResultState} from "./ISearchResultState";
+import React, {useState} from 'react';
 import {PrimaryButton} from '@fluentui/react'
 
-export default class SearchResultCard extends React.Component<ISearchResultProps, ISearchResultState>{
+export const SearchResultCard: React.FC<{item: any}> = ({item}) => {
 
-    constructor(props: ISearchResultProps){
-        super(props);
+    const [showDetails, setShowDetails] = useState(false);
 
-        this.toggleDetailsState = this.toggleDetailsState.bind(this)
-        this.state={
-            showDetails: false
-        };
-    }
+    //this.toggleDetailsState = this.toggleDetailsState.bind(this)
 
-    public toggleDetailsState(){  
-        const newDetailsState = this.state.showDetails ? false : true
-
-        this.setState({
-            showDetails: newDetailsState
-        });
-    }
-
-    public render(){
-        return (
-            <div onClick={this.toggleDetailsState}>
-                <p>{this.props.item.Title}</p>
-                {
-                    this.state.showDetails ?
-                        <div>
-                            <p>Difficulty: {this.props.item.Difficulty}</p>
-                            <p>Rating: {this.props.item.Rating}/5</p>
-                            <p>Duration: {this.props.item.Duration} hours</p>
-                            <PrimaryButton text="Begin journey"/>
-                        </div>
-                    : <div></div>
-                }
-            </div>
-        )
-    }
+    return (
+        <div onClick={() => setShowDetails(!showDetails)}>
+            <p>{item.Title}</p>
+            {
+                showDetails ?
+                    <>
+                    <ul>
+                        <li>Difficulty: {item.Difficulty}</li>
+                        <li>Rating: {item.Rating}/5</li>
+                        <li>Duration: {item.Duration} hours</li>
+                    </ul>
+                    <PrimaryButton text="Begin journey"/>
+                    </>
+                : null
+            }
+        </div>
+    )
 }
