@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {ISearchResultProps} from "./ISearchResultProps";
 import {ISearchResultState} from "./ISearchResultState";
-import {PrimaryButton} from '@fluentui/react'
+import {PrimaryButton} from '@fluentui/react';
 
 export default class SearchResultCard extends React.Component<ISearchResultProps, ISearchResultState>{
 
@@ -32,7 +32,7 @@ export default class SearchResultCard extends React.Component<ISearchResultProps
                             <p>Difficulty: {this.props.item.Difficulty}</p>
                             <p>Rating: {this.props.item.Rating}/5</p>
                             <p>Duration: {this.props.item.Duration} hours</p>
-                            <PrimaryButton text="Begin journey"/>
+                            <PrimaryButton text="Begin journey" onClick={this.props.clickHandler}/>
                         </div>
                     : <div></div>
                 }

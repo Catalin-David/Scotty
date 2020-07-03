@@ -5,7 +5,7 @@ import { ISearchBarProps } from './ISearchBarProps';
 import { ISearchBarState } from './ISearchBarState';
 import SearchResultCard from './SearchResult/SearchResultCard';
 
-export default class SearchBar extends React.Component<ISearchBarProps, ISearchBarState> {
+export const SearchBar: React.FC<{props: ISearchBarProps}> = ({props}) => {
     
     constructor(props: ISearchBarProps){
         super(props);
@@ -37,23 +37,30 @@ export default class SearchBar extends React.Component<ISearchBarProps, ISearchB
         });
     }
 
-    public render(){
-        return (
-            <div>
-                <SearchBox placeholder="Search journeys" onChange={(_ , newValue) => this.loadSearchResults(newValue)}/>
-                {
-                    this.state.items.length !== 0 ?
-                        <ul>
-                            {this.state.items.map(item => 
-                                <li>
-                                    <SearchResultCard item={item}/>
-                                </li>)
-                            }
-                        </ul>
-                    :
-                    <div>No results found ...</div>
-                }
-            </div>
-        )
+    const beginNewJourney = async (item: any) => {
+        const user = await sp.web.currentUser.get()
+        
+        await sp.web.lists.getByTitle("UserJourneys").items.add({
+            Title: user.Email,
+            JourneyId: item.ID
+        }).then(response => {console.log(response)}).catch(console.log)
     }
+
+    return (
+        <div>
+            <SearchBox placeholder="Search journeys" onChange={(_ , newValue) => this.loadSearchResults(newValue)}/>
+            {
+                this.state.items.length !== 0 ?
+                    <ul>
+                        {this.state.items.map(item => 
+                            <li>
+                                <SearchResultCard item={item} clickHandler={() => this.beginNewJourney(item)}/>
+                            </li>)
+                        }
+                    </ul>
+                :
+                <div>No results found ...</div>
+            }
+        </div>
+    )
 }
