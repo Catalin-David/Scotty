@@ -7,6 +7,6 @@ function GetProvisioningTemplateOfListAsXml($List){
 function AddPnPDataRowsToProvisioningTemplate($List){
     Add-PnPDataRowsToProvisioningTemplate -Path ListItems.xml -List $List -Query "<view></view>"
 }
-function AddListFromXmlToSharepointSite(){
+function AddListFromXmlToSharepointSite($List){
     Apply-PnpProvisioningTemplate ListItems.xml
 }
