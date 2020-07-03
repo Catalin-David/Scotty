@@ -18,6 +18,7 @@ export interface IClientWebPartProps {
 export default class ClientWebPart extends BaseClientSideWebPart <IClientWebPartProps> {
 
   public render(): void {
+   
     const element: React.ReactElement<IClientProps> = React.createElement(
       Client,
       {

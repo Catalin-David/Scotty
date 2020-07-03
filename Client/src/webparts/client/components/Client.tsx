@@ -1,9 +1,9 @@
-import * as React from 'react';
+import React from 'react';
 import styles from './Client.module.scss';
 import { IClientProps } from './IClientProps';
-import SearchBar from './SearchBar/SearchBar';
+import {SearchBar} from './SearchBar/SearchBar';
 
-export const Client: React.FC<{props: IClientProps}> = ({props}) => {
+const Client: React.FC<IClientProps> = (props) => {
 
     return (
       <div className={ styles.client }>
@@ -17,3 +17,5 @@ export const Client: React.FC<{props: IClientProps}> = ({props}) => {
       </div>
     );
 }
+
+export default Client
