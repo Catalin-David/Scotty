@@ -5,8 +5,6 @@ export const SearchResultCard: React.FC<{item: any}> = ({item}) => {
 
     const [showDetails, setShowDetails] = useState(false);
 
-    //this.toggleDetailsState = this.toggleDetailsState.bind(this)
-
     return (
         <div onClick={() => setShowDetails(!showDetails)}>
             <p>{item.Title}</p>
