@@ -1,0 +1,25 @@
+.modal {
+      position: fixed;
+      top: 10%;
+      left: calc(50%-200);
+      z-index: 1;
+      width: 200px;
+      height: 200px;
+      background-color: rgba(0, 0, 0, 0.90);
+      padding: 10px;
+      border-radius: 5px;
+}
+
+.close {
+  color: white;
+  float: right;
+}
+
+.close:hover {
+  color: cyan;
+  cursor: pointer;
+}
+
+.confirmButton {
+  margin-top: 15px;
+}
